@@ -4,13 +4,13 @@
 
 // forEach는 리턴을 사용할 수 없다.
 function solution(num_list) {
-    let i = 0;
+  let i = 0;
 
-    for(const e of num_list) {
-        if (e < 0) return i;
+  for (const e of num_list) {
+    if (e < 0) return i;
 
-        i++;
-    }
+    i++;
+  }
 
-    return -1;
+  return -1;
 }

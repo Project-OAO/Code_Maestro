@@ -4,5 +4,5 @@
 
 // 발상의 전환
 function solution(myString) {
-    return myString.toLowerCase().replaceAll("a", "A");
-}
+  return myString.toLowerCase().replaceAll('a', 'A');
+} 
