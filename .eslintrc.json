@@ -21,7 +21,11 @@
     "no-console": "warn",
     "no-dupe-args": "error",
     "no-unreachable": "error",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "block-like", "next": "*" }
+    ]
   },
   "plugins": ["import", "prettier"]
 }
