@@ -1,18 +1,25 @@
 // Lim, Jaedo a.k.a. OAO
-// 미완성문제
+// 29NOV2023 Wednesday
+// Contact: ashgrayblue0@gmail.com
 
+// 문제의 조건이 모호했다.
 function solution(dots) {
-    const set = new Set();
-    let fac = 0;
-    
-    dots.forEach((e, i) => {
-        for (let j = i + 1; j < dots.length; j += 1) {
-            let slop = (e[1] - dots[j][1]) / (e[0] - dots[j][0]);
-            set.add(slop);
-        }
-    });
-    
-    for (let i = dots.length - 1; i >= 1; fac += i, i -= 1);
-    
-    return set.size !== fac? 1 : 0;
+  if (
+    (dots[0][1] - dots[1][1]) / (dots[0][0] - dots[1][0]) ===
+    (dots[2][1] - dots[3][1]) / (dots[2][0] - dots[3][0])
+  )
+    return 1;
+  if (
+    (dots[0][1] - dots[2][1]) / (dots[0][0] - dots[2][0]) ===
+    (dots[1][1] - dots[3][1]) / (dots[1][0] - dots[3][0])
+  )
+    return 1;
+  if (
+    (dots[0][1] - dots[3][1]) / (dots[0][0] - dots[3][0]) ===
+    (dots[1][1] - dots[2][1]) / (dots[1][0] - dots[2][0])
+  )
+    return 1;
+  return 0;
 }
+
+export default solution;

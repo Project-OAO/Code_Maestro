@@ -1,26 +1,20 @@
 // Lim, Jaedo a.k.a. OAO
-// 미완성 문제
+// 29NOV2023 Wednesday
+// Contact: ashgrayblue0@gmail.com
 
+// 너무 어렵게 생각했던 문제인 듯
 function solution(num, total) {
     const answer = [];
-    let middleIndex, middleNum;
+    let i, first, sum = 0;
 
-    if (num % 2 === 1) {
-        middleIndex = Math.floor(num / 2);
-        middleNum = total / num;
-
-        for (let i = middleNum - middleIndex; i <= middleNum + middleIndex; i += 1) {
-            answer.push(i);
-        }
-
-        return answer;
+    for (i = 1; i < num; i += 1) {
+        sum += i;
     }
 
-    middleNum = Math.floor(total / 4); // num / 2 -1 번째 값
-    middleIndex = num / 2;
+    first = (total - sum) / num;
 
-    for (let i = middleNum - middleIndex + 1 ; i <= middleNum + middleIndex; i += 1) {
-        answer.push(i);
+    for (i = 0; i < num; i += 1) {
+        answer.push(first + i);
     }
 
     return answer;
