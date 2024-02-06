@@ -1,0 +1,17 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+<body>
+  <script>
+    function solution(s) {
+      let middleIndex = Math.floor(s.length / 2);
+      
+      return s.length % 2 === 1 ? s.substring(middleIndex, middleIndex + 1) : s.substring(middleIndex - 1, middleIndex + 1);
+    }
+    
+    console.log(solution('study'));
+  </script>
+</body>
+</html>

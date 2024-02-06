@@ -1,0 +1,19 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+<body>
+  <script>
+    function solution(s) {
+      return s.reduce((acc, cur) => {
+        if(acc.length < cur.length) return cur;
+        return acc;
+      });
+    }
+    
+    let str = ['teacher', 'time', 'student', 'beautiful', 'good'];
+    console.log(solution(str));
+  </script>
+</body>
+</html>
