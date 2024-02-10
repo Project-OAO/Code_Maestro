@@ -12,7 +12,7 @@
   "rules": {
     "prettier/prettier": 0, // prettier에 대한 경고 끄기
     "for-direction": 2, // for 루프가 무한대로 실행되는 것을 방지
-    "prefer-const": false, // let이 자기 멋대로 const로 바뀌는 것 끄기
+    //"prefer-const": 1, // let이 자기 멋대로 const로 바뀌는 것 끄기
     "max-depth" : ["error", 2],
     //"max-lines-per-function" : ["error", 15],
     "indent": ["error", 2],
