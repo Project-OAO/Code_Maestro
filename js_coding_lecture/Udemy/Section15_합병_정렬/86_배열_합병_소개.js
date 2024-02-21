@@ -41,3 +41,4 @@ function merge2(arr1, arr2) {
 console.log(merge([2], [1]));
 console.log(merge2([1, 2], [3, 4]));
 console.log(merge2([1, 2, 7, 9], [3, 4, 5, 6]));
+console.log(merge2([1, 2, 7], [3, 4, 5, 6]));
