@@ -30,12 +30,12 @@ class SinglyLinkedList {
     let pre = this.head;
     let after = pre;
 
-    if (this.length === 0) return null;
+    if (this.length === 0) return undefined;
     if (this.length === 1) {
       this.head = null;
       this.tail = null;
       this.length -= 1;
-      return pre.val;
+      return pre;
     }
 
     while (after.next) {
@@ -47,7 +47,7 @@ class SinglyLinkedList {
     this.tail = pre;
     this.length -= 1;
 
-    return after.val;
+    return after;
   }
 }
 
