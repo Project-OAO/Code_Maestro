@@ -1,0 +1,10 @@
+const stack = [];
+stack.push('google');
+stack.push('twitter');
+stack.push('linkedin');
+stack.push('github');
+console.log(stack);
+stack.pop();
+stack.pop();
+stack.pop();
+console.log(stack);
