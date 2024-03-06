@@ -41,7 +41,7 @@ class Node {
   }
 }
 
-class BFT {
+class Tree {
   constructor() {
     this.root = null;
   }
@@ -75,7 +75,7 @@ class BFT {
     }
   }
 
-  search() {
+  BFT() {
     const queue = new Queue();
     const result = [];
 
@@ -92,9 +92,24 @@ class BFT {
 
     return result;
   }
+
+  DFT_PreOrder() {
+    const result = [];
+
+    function help(node) {
+      if (!node) return null;
+      result.push(node.val);
+      if (node.left) help(node.left);
+      if (node.right) help(node.right);
+    }
+
+    help(this.root);
+
+    return result;
+  }
 }
 
-const t = new DFT();
+const t = new Tree();
 t.push(10);
 t.push(6);
 t.push(3);
@@ -102,4 +117,4 @@ t.push(8);
 t.push(15);
 t.push(20);
 console.log(t);
-console.log(t.search());
+console.log(t.DFT_PreOrder());
