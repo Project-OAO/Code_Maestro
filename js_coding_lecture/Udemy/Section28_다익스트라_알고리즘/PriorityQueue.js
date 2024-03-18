@@ -10,7 +10,7 @@ class PriorityQueue {
     // 재귀로 구현을 해보자.
     const pivot = (index = this.values.length - 1) => {
       const parent = Math.floor((index - 1) / 2);
-      if (parent < 0 || this.values[parent].priority > this.values[index].priority) return null;
+      if (parent < 0 || this.values[parent].priority < this.values[index].priority) return null;
       [this.values[parent], this.values[index]] = [this.values[index], this.values[parent]];
       pivot(parent);
 
@@ -34,23 +34,23 @@ class PriorityQueue {
     const pivot = (index = 0) => {
       const left = index * 2 + 1;
       const right = index * 2 + 2;
-      let bigIndex = null;
+      let smallIndex = null;
 
       if (this.values[left]) {
         if (this.values[right]) {
-          bigIndex = (this.values[left].priority > this.values[right].priority) ? left : right;
+          smallIndex = (this.values[left].priority < this.values[right].priority) ? left : right;
         }
 
-        bigIndex = left;
+        smallIndex = left;
       } else if (this.values[right]) {
-        bigIndex = right;
+        smallIndex = right;
       } else return null;
 
-      if (this.values[bigIndex].priority > this.values[index].priority) {
-        [this.values[bigIndex], this.values[index]] = [this.values[index], this.values[bigIndex]];
+      if (this.values[smallIndex].priority < this.values[index].priority) {
+        [this.values[smallIndex], this.values[index]] = [this.values[index], this.values[smallIndex]];
       }
 
-      pivot(bigIndex);
+      pivot(smallIndex);
 
       return this;
     };
