@@ -61,7 +61,8 @@ class PriorityQueue {
   dequeue() {
     [this.values[0], this.values[this.values.length - 1]] = [this.values[this.values.length - 1], this.values[0]];
     const result = this.values.pop();
-    console.log(this.bubbleDown());
     return result;
   }
 }
+
+export {PriorityQueue};
