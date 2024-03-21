@@ -65,6 +65,7 @@ class WeightedGraph {
         if (currentDist + dist < distance[e.node]) {
           distance[e.node] = currentDist + dist;
           priorityQueue.enqueue(distance[e.node], e.node);
+          previous[e] = current;
         }
       });
     }
