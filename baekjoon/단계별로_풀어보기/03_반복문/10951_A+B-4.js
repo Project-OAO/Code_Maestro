@@ -1,15 +1,10 @@
 const fs = require('fs');
 
-const input = fs.readFileSync(0).toString().split('\n');
+const input = fs.readFileSync(0).toString().trim().split('\n');
 
-let sum;
-let index = 0;
+const result = input.map((v) => {
+  const [num1, num2] = v.split(' ').map(Number);
+  return num1 + num2;
+});
 
-while (true) {
-  const data = input[index].split(' ').map(v => parseInt(v, 10));
-  sum = data[0] + data[1];
-  console.log(sum);
-
-  index++;
-  if (input[index]) break;
-}
+result.forEach(v => console.log(v));
