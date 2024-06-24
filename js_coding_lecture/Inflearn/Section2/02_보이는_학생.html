@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>보이는 학생</title>
+</head>
+<body>
+	<script>
+		/*
+		* [설계]
+		* - 항상 설계부터 해야 한다.
+		*
+		* [입력]
+		* - 첫 줄에 정수 N => 학생 수 (1 <= N <= 1000)
+		* - 둘째 줄에 키 상관없이 쭉 보임
+		*
+		* [출력]
+		* - 선생님이 볼 수 있는 학생의 수
+		*
+		* [로직]
+		* <환경 설정>
+		* - 현재까지 제일 큰 키의 학생을 저장할 변수를 설정한다.
+		* - 현재까지 보이는 학생의 수를 저장할 변수를 설정한다.
+		*
+		* <설계>
+		* - 제일 첫번째 학생을 기준으로 '현재까지 제일 큰 키의 학생' 변수에 현재 학생의 키를 저장하고, 보이는 학생 수를 +1 해서 1로 설정한다.
+		* - 이후 '현재까지 제일 큰 키의 학생' 값과 비교해서 이 값보다 큰 값이 나올 경우 학생 수를 +1 하고, 키를 갱신한다.
+		* - 배열의 끝까지 이를 반복한다.
+		*
+		* [유사한 문제]
+		* - 최댓값 구하는 문제랑 같다.
+		* */
+		
+		const solution = (input) => {
+			// 입력 처리
+			const splitted = input[1].trim().split(' ').map(Number);
+			
+			let answer = 1; // 보이는 학생 수
+			let tallest = splitted[0];
+			
+			for (let i = 1; i < Number(input[0]); i++) {
+				if (splitted[i] > tallest) {
+					tallest = splitted[i];
+					answer++;
+				}
+			}
+			
+			return answer;
+		};
+		
+		const input = ['8', '130 135 148 140 145 150 150 153'];
+		console.log(solution(input));
+	</script>
+</body>
+</html>
