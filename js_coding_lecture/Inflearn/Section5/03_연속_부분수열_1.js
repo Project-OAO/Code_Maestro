@@ -13,7 +13,6 @@ const solution = (sum, input) => {
     } else {
       count++;
       tmp -= input[i++];
-      i++;
     }
   }
 
