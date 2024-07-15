@@ -5,7 +5,7 @@ const answer = (input) => {
 
   tmp.forEach(v => {
     if (v === '(') stack.push(v);
-    else if (stack.length !== 0) result = 'NO';
+    else if (stack.length <= 0) result = 'NO';
     else stack.pop();
   });
 
@@ -15,3 +15,4 @@ const answer = (input) => {
 };
 
 console.log(answer('(()(()))(()'));
+console.log(answer('()()'));
